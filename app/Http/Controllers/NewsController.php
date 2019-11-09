@@ -48,7 +48,8 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        //
+        $news = Tidings::find($id);
+        return view('news.show')->with('news', $news);
     }
 
     /**
@@ -59,7 +60,8 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $news = Tidings::find($id);
+        return view('news.update')->with('news', $news);
     }
 
     /**
@@ -71,7 +73,8 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Tidings::find($id)->update($request->all());
+        return redirect()->route('News.index');
     }
 
     /**
@@ -89,4 +92,5 @@ class NewsController extends Controller
     {
         return view('news.add');
     }
+
 }
