@@ -21,3 +21,6 @@ Route::resource('/News', 'NewsController');
 //News Route Custome
 Route::get('/AddNews', 'NewsController@formNews')->name('formNews');
 // Route::get('/UpdateNews', 'NewsController@formUpdate')->name('formUpdate');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

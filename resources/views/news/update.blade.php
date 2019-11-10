@@ -1,8 +1,7 @@
 @extends('layouts.master')
 @section('content_post')
-    <form action="{{route('News.update', $news->id)}}" method="GET">
-        {{ csrf_field() }}
-        {{ method_field('patch') }}
+    <form action="{{route('News.update', $news->id)}}" method="POST">
+        {{ csrf_field() }} {{ method_field('put') }}
         <div class="form-group">
           <label for="title">Title</label>
           <input type="text" class="form-control" name="title" id="title" value="{!! $news->title !!}">

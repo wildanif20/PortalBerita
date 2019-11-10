@@ -69,6 +69,7 @@
 					<div class="section-row">
 						<ul class="nav-aside-menu">
 							<li><a href="{{route('formNews')}}">Add News</a></li>
+							<li><a href="{{route('login')}}">Login</a></li>
 							<li><a href="about.html">About Us</a></li>
 							<li><a href="#">Join Us</a></li>
 							<li><a href="#">Advertisement</a></li>

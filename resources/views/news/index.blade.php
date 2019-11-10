@@ -8,7 +8,11 @@
                     <div class="post-meta">
                         <a class="post-category cat-1" href="{{route('News.show', $new->id)}}">{!! $new->title !!}</a>
                         <a class="post-category cat-2" href="{{route('News.edit', $new->id)}}">Update</a>
-                        <a class="post-category cat-3" href="category.html">Delete</a>
+                        <a class="post-category cat-3" href="{{route('News.destroy', $new->id)}}">Delete</a>
+                        <form action="{{route('News.destroy', $new->id)}}" method="POST">
+                            {{ csrf_field() }} {{ method_field('DELETE') }}
+                            <button type="submit">Delete</button>
+                        </form>
                         <span class="post-date">{!! $new->created_at !!}</span>
                     </div>
                     <h3 class="post-title"><a href="blog-post.html">{!! $new->content !!}</a></h3>

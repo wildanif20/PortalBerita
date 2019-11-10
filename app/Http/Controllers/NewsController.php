@@ -37,7 +37,7 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         Tidings::create($request->all());
-        return view('welcome');
+        return redirect()->route('News.index');
     }
 
     /**
@@ -73,7 +73,7 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // Tidings::find($id)->update($request->all());
+        Tidings::find($id)->update($request->all());
         return redirect()->route('News.index');
     }
 
@@ -85,7 +85,8 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Tidings::find($id)->delete();
+        return redirect()->route('News.index');
     }
 
     public function formNews()
